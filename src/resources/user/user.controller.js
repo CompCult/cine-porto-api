@@ -7,12 +7,12 @@ const { User } = require('./user.model');
 const api = module.exports;
 
 api.listUsers = async (req, res) => {
-  const users = await User.find().select('-password');
+  const users = await User.find().select('-password -photoPath');
   res.send(users);
 };
 
 api.getUser = async (req, res) => {
-  const user = await User.findById(req.params.id).select('-password');
+  const user = await User.findById(req.params.id).select('-password -photoPath');
   res.send(user);
 };
 
