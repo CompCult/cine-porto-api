@@ -15,6 +15,11 @@ api.getUser = async (req, res) => {
 };
 
 api.createUser = async (req, res) => {
+  const userAlreadyExists = await User.findOne({ email: req.body.email });
+  if (userAlreadyExists) {
+    return res.status(409).send('This email is already registered');
+  }
+
   const user = new User(req.body);
   const salt = await bcrypt.genSalt();
   user.password = await bcrypt.hash(user.password, salt);
