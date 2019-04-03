@@ -7,4 +7,4 @@
 #### POST /users
 #### PUT /users/:userId
 #### DELETE /users/:userId
-#### POST /users/login
+#### POST /users/auth
