@@ -38,3 +38,15 @@ api.deleteUser = async (req, res) => {
   const user = await User.findByIdAndRemove(req.params.id);
   res.send(user);
 };
+
+api.auth = async (req, res) => {
+  const user = await User.findOne({ email: req.body.email });
+  if (user) { 
+    const passwordsMatch = await bcrypt.compare(req.body.password, user.password);
+    if (passwordsMatch) {
+      return res.send('Sucessfuly login');
+    }
+  }
+
+  res.status(401).send('Invalid email or password');
+}

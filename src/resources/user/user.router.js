@@ -12,4 +12,6 @@ userRouter.patch('/:userId', userController.updateUser);
 
 userRouter.delete('/:userId', userController.deleteUser);
 
+userRouter.post('/auth', userController.auth);
+
 module.exports = userRouter;
