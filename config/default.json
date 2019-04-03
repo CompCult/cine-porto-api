@@ -1,3 +1,4 @@
 {
-  "db": "mongodb://localhost/cine-porto"
+  "db": "mongodb://localhost/cine-porto",
+  "jwtSecretKey": "jwtsecretkey123"
 }

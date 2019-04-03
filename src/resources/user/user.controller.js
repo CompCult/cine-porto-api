@@ -1,5 +1,7 @@
 const _ = require('lodash');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const config = require('config');
 const { User } = require('./user.model');
 
 const api = module.exports;
@@ -41,12 +43,13 @@ api.deleteUser = async (req, res) => {
 
 api.auth = async (req, res) => {
   const user = await User.findOne({ email: req.body.email });
-  if (user) { 
+  if (user) {
     const passwordsMatch = await bcrypt.compare(req.body.password, user.password);
     if (passwordsMatch) {
-      return res.send('Sucessfuly login');
+      const token = jwt.sign({ email: user.email }, config.get('jwtSecretKey'));
+      return res.send(token);
     }
   }
 
   res.status(401).send('Invalid email or password');
-}
+};
