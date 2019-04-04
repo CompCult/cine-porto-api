@@ -3,12 +3,12 @@
 ## Resource: User
 Recurso que suporta operações de manipulação e autenticação de usuários.
 
-* [POST /users/auth]()
-* [GET /users]()
-* [GET /users/:userId]()
-* [POST /users]()
-* [PUT /users/:userId]()
-* [DELETE /users/:userId]()
+* [POST /users/auth](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-usersauth)
+* [GET /users](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-users)
+* [GET /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-usersuserid)
+* [POST /users](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-users)
+* [PUT /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#put-usersuserid)
+* [DELETE /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#delete-usersuserid)
 
 ### POST /users/auth
 Autentica um usuário e retorna seu token.
