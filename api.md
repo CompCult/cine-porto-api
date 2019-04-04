@@ -153,10 +153,10 @@ Autentica um usuário e retorna seu token.
 
 **Success Response**
 
-_Status Code_: 200
-_Example Response_
+_Status Code_: 200  
+_Example Response_  
 ```json
 {
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiIxMjM0NTY3ODkwIiwib...
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiIxMjM0NTY3ODkwIiwib..."
 }
 ```
