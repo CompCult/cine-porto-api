@@ -7,7 +7,7 @@ Recurso que suporta operações de manipulação e autenticação de usuários.
 * [GET /users](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-users)
 * [GET /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-usersuserid)
 * [POST /users](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-users)
-* [PUT /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#put-usersuserid)
+* [PATCH /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#patch-usersuserid)
 * [DELETE /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#delete-usersuserid)
 
 ### POST /users/auth
@@ -119,12 +119,12 @@ _Example Response_
 }
 ```
 
-### PUT /users/:userId
+### PATCH /users/:userId
 Atualiza os dados usuário especificado através do id.
 
 **Example Request**
 
-```PUT /users/123```
+```PATCH /users/123```
 ```json
 {
     "name": "Matias",
