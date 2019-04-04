@@ -13,7 +13,7 @@ Recurso que suporta operações de manipulação e autenticação de usuários.
 #### POST /users/auth
 Autentica um usuário e retorna seu token.
 
-**Example Request**
+##### Example Request
 
 ```POST /users/auth```
 ```json
@@ -23,7 +23,7 @@ Autentica um usuário e retorna seu token.
 }
 ```
 
-**Success Response**
+##### Success Response
 
 _Status Code_: 200  
 _Example Response_  
@@ -33,18 +33,18 @@ _Example Response_
 }
 ```
 
-**Client Errors**
+##### Client Errors
 
 * 401 - Usuário ou senha inválidos.
 
 #### GET /users
 Retorna uma lista contendo todos os usuários cadastrados no sistema.
 
-**Example Request**
+##### Example Request
 
 ```GET /users```
 
-**Success Response**
+##### Success Response
 
 _Status Code:_ 200  
 _Example Response_  
@@ -72,11 +72,11 @@ _Example Response_
 #### GET /users/:userId
 Retorna o usuário espicificado através do id.
 
-**Example Request**
+##### Example Request
 
 ```GET /users/123```
 
-**Success Response**
+##### Success Response
 
 _Status Code:_ 200  
 _Example Response_  
@@ -91,7 +91,7 @@ _Example Response_
 }
 ```
 
-**Client Errors**
+##### Client Errors
 
 * 403 - O cliente não possui permissão;
 * 404 - Usuário não existe.
@@ -100,7 +100,7 @@ _Example Response_
 #### POST /users
 Cria um novo usuário no sistema.
 
-**Example Request**
+##### Example Request
 
 ```POST /users```
 ```json
@@ -114,7 +114,7 @@ Cria um novo usuário no sistema.
 }
 ```
 
-**Success Response**
+##### Success Response
 
 _Status Code:_ 201  
 _Example Response_  
@@ -129,7 +129,7 @@ _Example Response_
 }
 ```
 
-**Client Errors**
+##### Client Errors
 
 * 400 - Campo inválido;
 * 409 - Usuário já cadastrado.
@@ -138,7 +138,7 @@ _Example Response_
 #### PATCH /users/:userId
 Atualiza os dados usuário especificado através do id.
 
-**Example Request**
+##### Example Request
 
 ```PATCH /users/123```
 ```json
@@ -148,7 +148,7 @@ Atualiza os dados usuário especificado através do id.
 }
 ```
 
-**Success Response**
+##### Success Response
 
 _Status Code:_ 200  
 _Example Response_  
@@ -163,7 +163,7 @@ _Example Response_
 }
 ```
 
-**Client Errors**
+##### Client Errors
 
 * 400 - Campo inválido;
 * 403 - O cliente não possui permissão.
@@ -171,11 +171,11 @@ _Example Response_
 #### DELETE /users/:userId
 Remove o usuário do sistema através do id.
 
-**Example Request**
+##### Example Request
 
 ```DELETE /users/123```
 
-**Success Response**
+##### Success Response
 
 _Status Code:_ 200  
 _Example Response_  
@@ -190,7 +190,7 @@ _Example Response_
 }
 ```
 
-**Client Errors**
+##### Client Errors
 
 * 403 - O cliente não possui permissão;
 * 404 - Usuário não existe.
