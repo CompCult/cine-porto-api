@@ -3,6 +3,36 @@
 ## Resource: User
 Recurso que suporta operações de manipulação e autenticação de usuários.
 
+* [POST /users/auth]()
+* [GET /users]()
+* [GET /users/:userId]()
+* [POST /users]()
+* [PUT /users/:userId]()
+* [DELETE /users/:userId]()
+
+### POST /users/auth
+Autentica um usuário e retorna seu token.
+
+**Example Request**
+
+```POST /users/auth```
+```json
+{
+    "username": "usuario@email.com",
+    "password": "abcd1234"
+}
+```
+
+**Success Response**
+
+_Status Code_: 200  
+_Example Response_  
+```json
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiIxMjM0NTY3ODkwIiwib..."
+}
+```
+
 ### GET /users
 Retorna uma lista contendo todos os usuários cadastrados no sistema.
 
@@ -138,25 +168,3 @@ _Example Response_
 }
 ```
 
-### POST /users/auth
-Autentica um usuário e retorna seu token.
-
-**Example Request**
-
-```POST /users/auth```
-```json
-{
-    "username": "usuario@email.com",
-    "password": "abcd1234"
-}
-```
-
-**Success Response**
-
-_Status Code_: 200  
-_Example Response_  
-```json
-{
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiIxMjM0NTY3ODkwIiwib..."
-}
-```
