@@ -1,6 +1,6 @@
 # Cine Porto API
 
-## Resource: User
+### Resource: User
 Recurso que suporta operações de manipulação e autenticação de usuários.
 
 * [POST /users/auth](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-usersauth)
@@ -10,7 +10,7 @@ Recurso que suporta operações de manipulação e autenticação de usuários.
 * [PATCH /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#patch-usersuserid)
 * [DELETE /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#delete-usersuserid)
 
-### POST /users/auth
+#### POST /users/auth
 Autentica um usuário e retorna seu token.
 
 **Example Request**
@@ -37,7 +37,7 @@ _Example Response_
 
 * 401 - Usuário ou senha inválidos.
 
-### GET /users
+#### GET /users
 Retorna uma lista contendo todos os usuários cadastrados no sistema.
 
 **Example Request**
@@ -69,7 +69,7 @@ _Example Response_
 ]
 ```
 
-### GET /users/:userId
+#### GET /users/:userId
 Retorna o usuário espicificado através do id.
 
 **Example Request**
@@ -97,7 +97,7 @@ _Example Response_
 * 404 - Usuário não existe.
 
 
-### POST /users
+#### POST /users
 Cria um novo usuário no sistema.
 
 **Example Request**
@@ -135,7 +135,7 @@ _Example Response_
 * 409 - Usuário já cadastrado.
 
 
-### PATCH /users/:userId
+#### PATCH /users/:userId
 Atualiza os dados usuário especificado através do id.
 
 **Example Request**
@@ -168,7 +168,7 @@ _Example Response_
 * 400 - Campo inválido;
 * 403 - O cliente não possui permissão.
 
-### DELETE /users/:userId
+#### DELETE /users/:userId
 Remove o usuário do sistema através do id.
 
 **Example Request**
