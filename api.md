@@ -33,6 +33,10 @@ _Example Response_
 }
 ```
 
+**Client Errors**
+
+* 401 - Usuário ou senha inválidos.
+
 ### GET /users
 Retorna uma lista contendo todos os usuários cadastrados no sistema.
 
@@ -87,6 +91,12 @@ _Example Response_
 }
 ```
 
+**Client Errors**
+
+* 403 - O cliente não possui permissão;
+* 404 - Usuário não existe.
+
+
 ### POST /users
 Cria um novo usuário no sistema.
 
@@ -119,6 +129,12 @@ _Example Response_
 }
 ```
 
+**Client Errors**
+
+* 400 - Campo inválido;
+* 409 - Usuário já cadastrado.
+
+
 ### PATCH /users/:userId
 Atualiza os dados usuário especificado através do id.
 
@@ -146,6 +162,12 @@ _Example Response_
     "dateOfBirth": "1999-10-22"
 }
 ```
+
+**Client Errors**
+
+* 400 - Campo inválido;
+* 403 - O cliente não possui permissão.
+
 ### DELETE /users/:userId
 Remove o usuário do sistema através do id.
 
@@ -168,3 +190,7 @@ _Example Response_
 }
 ```
 
+**Client Errors**
+
+* 403 - O cliente não possui permissão;
+* 404 - Usuário não existe.
