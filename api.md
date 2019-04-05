@@ -2,37 +2,26 @@
 Documentação da API da aplicação Cine Porto.
 
 ### Table of Contents
+- [Authentication](https://github.com/CompCult/cine-porto-api/blob/master/api.md#authentication)
 - [User](https://github.com/CompCult/cine-porto-api/blob/master/api.md#resource-user)
-  * [POST /users/auth](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-usersauth)
   * [GET /users](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-users)
   * [GET /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-usersuserid)
   * [POST /users](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-users)
   * [PATCH /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#patch-usersuserid)
   * [DELETE /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#delete-usersuserid)
 - [Institution](https://github.com/CompCult/cine-porto-api/blob/master/api.md#resource-institution)
-  * [POST /institutions/auth](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-institutionsauth)
   * [GET /institutions](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-institutions)
   * [GET /institutions/:institutionId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-institutionsinstitutionid)
   * [POST /institutions](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-institutions)
   * [PATCH /institutions/:institutionId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#patch-institutionsinstitutionid)
   * [DELETE /institutions/:institutionId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#delete-institutionsinstitutionid)
 
-### Resource: User
-Recurso que suporta operações de manipulação e autenticação de usuários.
-
-* [POST /users/auth](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-usersauth)
-* [GET /users](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-users)
-* [GET /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-usersuserid)
-* [POST /users](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-users)
-* [PATCH /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#patch-usersuserid)
-* [DELETE /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#delete-usersuserid)
-
-#### POST /users/auth
-Autentica um usuário e retorna seu token.
+### Authentication
+Autenticação de um usuário ou instituição.
 
 ##### Example Request
 
-```POST /users/auth```
+```POST /auth```
 ```json
 {
     "email": "usuario@email.com",
@@ -53,6 +42,15 @@ _Example Response_
 ##### Client Errors
 
 * 401 - Email ou senha inválidos.
+
+### Resource: User
+Recurso que suporta operações de manipulação e autenticação de usuários.
+
+* [GET /users](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-users)
+* [GET /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-usersuserid)
+* [POST /users](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-users)
+* [PATCH /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#patch-usersuserid)
+* [DELETE /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#delete-usersuserid)
 
 #### GET /users
 Retorna uma lista contendo todos os usuários cadastrados no sistema.
@@ -216,39 +214,11 @@ _Example Response_
 ### Resource: Institution
 Recurso que suporta operações de manipulação e autenticação de instituições.
 
-* [POST /institutions/auth](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-institutionsauth)
 * [GET /institutions](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-institutions)
 * [GET /institutions/:institutionId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-institutionsinstitutionid)
 * [POST /institutions](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-institutions)
 * [PATCH /institutions/:institutionId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#patch-institutionsinstitutionid)
 * [DELETE /institutions/:institutionId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#delete-institutionsinstitutionid)
-
-#### POST /institutions/auth
-Autentica uma instituição e retorna seu token.
-
-##### Example Request
-
-```POST /institutions/auth```
-```json
-{
-    "email": "instituicao@email.com",
-    "password": "abcd1234"
-}
-```
-
-##### Success Response
-
-_Status Code_: 200  
-_Example Response_  
-```json
-{
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiIxMjM0NTY3ODkwIiwib..."
-}
-```
-
-##### Client Errors
-
-* 401 - Email ou senha inválidos.
 
 #### GET /institutions
 Retorna uma lista contendo todas as instituições cadastradas no sistema.
