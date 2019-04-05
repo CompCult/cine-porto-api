@@ -18,7 +18,7 @@ Autentica um usuário e retorna seu token.
 ```POST /users/auth```
 ```json
 {
-    "username": "usuario@email.com",
+    "email": "usuario@email.com",
     "password": "abcd1234"
 }
 ```
@@ -35,7 +35,7 @@ _Example Response_
 
 ##### Client Errors
 
-* 401 - Usuário ou senha inválidos.
+* 401 - Email ou senha inválidos.
 
 #### GET /users
 Retorna uma lista contendo todos os usuários cadastrados no sistema.
@@ -194,3 +194,242 @@ _Example Response_
 
 * 403 - O cliente não possui permissão;
 * 404 - Usuário não existe.
+
+
+### Resource: Institution
+Recurso que suporta operações de manipulação e autenticação de instituições.
+
+* [POST /institutions/auth](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-institutionsauth)
+* [GET /institutions](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-institutions)
+* [GET /institutions/:institutionId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-institutionsinstitutionid)
+* [POST /institutions](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-institutions)
+* [PATCH /institutions/:institutionId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#patch-institutionsinstitutionid)
+* [DELETE /institutions/:institutionId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#delete-institutionsinstitutionid)
+
+#### POST /institutions/auth
+Autentica uma instituição e retorna seu token.
+
+##### Example Request
+
+```POST /institutions/auth```
+```json
+{
+    "email": "instituicao@email.com",
+    "password": "abcd1234"
+}
+```
+
+##### Success Response
+
+_Status Code_: 200  
+_Example Response_  
+```json
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiIxMjM0NTY3ODkwIiwib..."
+}
+```
+
+##### Client Errors
+
+* 401 - Email ou senha inválidos.
+
+#### GET /institutions
+Retorna uma lista contendo todas as instituições cadastradas no sistema.
+
+##### Example Request
+
+```GET /institutions```
+
+##### Success Response
+
+_Status Code:_ 200  
+_Example Response_  
+```json
+[
+    {
+        "_id": "123",
+        "name": "Instituição 1",
+        "description": "breve descrição...",
+        "email": "instituicao1@email.com",
+        "sif": "123124343",
+        "phone": "83912341234",
+        "address": "Rua Tavares Campos 34 - Centro - Porto",
+        "bankAccount": {
+            "account": "123432-4",
+            "bank": "12",
+            "agency": "231-2"
+        }
+    },
+    {
+        "_id": "456",
+        "name": "Instituição 2",
+        "description": "breve descrição...",
+        "email": "instituicao2@email.com",
+        "sif": "4534645656",
+        "phone": "83943214321",
+        "address": "Rua Tavares Campos 34 - Centro - Porto",
+        "bankAccount": {
+            "account": "123432-4",
+            "bank": "12",
+            "agency": "231-2"
+        }
+    }
+]
+```
+
+#### GET /institutions/:institutionId
+Retorna a instituição espicificada através do id.
+
+##### Example Request
+
+```GET /institutions/123```
+
+##### Success Response
+
+_Status Code:_ 200  
+_Example Response_  
+```json
+{
+    "_id": "123",
+    "name": "Instituição 1",
+    "description": "breve descrição...",
+    "email": "instituicao1@email.com",
+    "sif": "123124343",
+    "phone": "83912341234",
+    "address": "Rua Tavares Campos 34 - Centro - Porto",
+    "bankAccount": {
+        "account": "123432-4",
+        "bank": "12",
+        "agency": "231-2"
+    }
+}
+```
+
+##### Client Errors
+
+* 403 - O cliente não possui permissão;
+* 404 - Instituição não existe.
+
+
+#### POST /institutions
+Cria uma nova instituição no sistema.
+
+##### Example Request
+
+```POST /institutions```
+```json
+{
+    "_id": "123",
+    "name": "Instituição 1",
+    "description": "breve descrição...",
+    "email": "instituicao1@email.com",
+    "password": "abcd1234",
+    "sif": "123456789",
+    "phone": "83912341234",
+    "address": "Rua Tavares Campos 34 - Centro - Porto",
+    "bankAccount": {
+        "account": "123432-4",
+        "bank": "12",
+        "agency": "231-2"
+    }
+}
+```
+
+##### Success Response
+
+_Status Code:_ 201  
+_Example Response_  
+```json
+{
+    "_id": "123",
+    "name": "Instituição 1",
+    "description": "breve descrição...",
+    "email": "instituicao1@email.com",
+    "sif": "123456789",
+    "phone": "83912341234",
+    "address": "Rua Tavares Campos 34 - Centro - Porto",
+    "bankAccount": {
+        "account": "123432-4",
+        "bank": "12",
+        "agency": "231-2"
+    }
+}
+```
+
+##### Client Errors
+
+* 400 - Campo inválido;
+* 409 - Instituição já cadastrada.
+
+
+#### PATCH /institutions/:institutionId
+Atualiza os dados da instituição especificada através do id.
+
+##### Example Request
+
+```PATCH /institutions/123```
+```json
+{
+    "name": "Instituição 3",
+    "email": "instituicao3@email.com",
+}
+```
+
+##### Success Response
+
+_Status Code:_ 200  
+_Example Response_  
+```json
+{
+    "_id": "123",
+    "name": "Instituição 3",
+    "description": "breve descrição...",
+    "email": "instituicao3@email.com",
+    "sif": "123456789",
+    "phone": "83912341234",
+    "address": "Rua Tavares Campos 34 - Centro - Porto",
+    "bankAccount": {
+        "account": "123432-4",
+        "bank": "12",
+        "agency": "231-2"
+    }
+}
+```
+
+##### Client Errors
+
+* 400 - Campo inválido;
+* 403 - O cliente não possui permissão.
+
+#### DELETE /institutions/:institutionId
+Remove a instituição do sistema através do id.
+
+##### Example Request
+
+```DELETE /institutions/123```
+
+##### Success Response
+
+_Status Code:_ 200  
+_Example Response_  
+```json
+{
+    "_id": "123",
+    "name": "Instituição 3",
+    "description": "breve descrição...",
+    "email": "instituicao3@email.com",
+    "sif": "123456789",
+    "phone": "83912341234",
+    "address": "Rua Tavares Campos 34 - Centro - Porto",
+    "bankAccount": {
+        "account": "123432-4",
+        "bank": "12",
+        "agency": "231-2"
+    }
+}
+```
+
+##### Client Errors
+
+* 403 - O cliente não possui permissão;
+* 404 - Instituição não existe.
