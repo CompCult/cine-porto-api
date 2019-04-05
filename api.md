@@ -319,7 +319,6 @@ Cria uma nova instituição no sistema.
 ```POST /institutions```
 ```json
 {
-    "_id": "123",
     "name": "Instituição 1",
     "description": "breve descrição...",
     "email": "instituicao1@email.com",
