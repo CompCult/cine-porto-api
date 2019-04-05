@@ -1,4 +1,21 @@
 # Cine Porto API
+Documentação da API da aplicação Cine Porto.
+
+### Table of Contents
+- [User](https://github.com/CompCult/cine-porto-api/blob/master/api.md#resource-user)
+  * [POST /users/auth](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-usersauth)
+  * [GET /users](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-users)
+  * [GET /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-usersuserid)
+  * [POST /users](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-users)
+  * [PATCH /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#patch-usersuserid)
+  * [DELETE /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#delete-usersuserid)
+- [Institution](https://github.com/CompCult/cine-porto-api/blob/master/api.md#resource-institution)
+  * [POST /institutions/auth](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-institutionsauth)
+  * [GET /institutions](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-institutions)
+  * [GET /institutions/:institutionId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-institutionsinstitutionid)
+  * [POST /institutions](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-institutions)
+  * [PATCH /institutions/:institutionId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#patch-institutionsinstitutionid)
+  * [DELETE /institutions/:institutionId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#delete-institutionsinstitutionid)
 
 ### Resource: User
 Recurso que suporta operações de manipulação e autenticação de usuários.
