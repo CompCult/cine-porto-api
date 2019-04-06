@@ -46,9 +46,12 @@ _Example Response:_
 
 ```json
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiIxMjM0NTY3ODkwIiwib..."
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiIxMjM0NTY3ODkwIiwib...",
+    "role": "user"
 }
 ```
+
+> Obs: A propriedade "role" também poderá vir com o valor "institution"
 
 ##### Client Errors
 
@@ -56,7 +59,7 @@ _Example Response:_
 
 ### Resource: User
 
-Recurso que suporta operações de manipulação e autenticação de usuários.
+Recurso que suporta operações de manipulação de usuários.
 
 -   [GET /users](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-users)
 -   [GET /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-usersuserid)
@@ -66,7 +69,7 @@ Recurso que suporta operações de manipulação e autenticação de usuários.
 
 #### GET /users
 
-Retorna uma lista contendo todos os usuários cadastrados no sistema.
+Retorna uma lista contendo todos os usuários.
 
 ##### Example Request
 
@@ -83,6 +86,7 @@ _Example Response:_
         "_id": "123",
         "name": "Daniel",
         "email": "daniel@email.com",
+        "photoUrl": "https://ex.com/photo/123.png",
         "nationality": "brasileiro",
         "phone": "83912341234",
         "dateOfBirth": "1999-10-22"
@@ -91,6 +95,7 @@ _Example Response:_
         "_id": "456",
         "name": "Douglas",
         "email": "douglas@email.com",
+        "photoUrl": "https://ex.com/photo/456.png",
         "nationality": "brasileiro",
         "phone": "83956875687",
         "dateOfBirth": "1987-02-27"
@@ -100,7 +105,7 @@ _Example Response:_
 
 #### GET /users/:userId
 
-Retorna o usuário espicificado através do id.
+Retorna o usuário com o id especificado.
 
 ##### Example Request
 
@@ -116,6 +121,7 @@ _Example Response:_
     "_id": "123",
     "name": "Daniel",
     "email": "daniel@email.com",
+    "photoUrl": "https://ex.com/photo/123.png",
     "nationality": "brasileiro",
     "phone": "83912341234",
     "dateOfBirth": "1999-10-22"
@@ -138,6 +144,7 @@ Cria um novo usuário no sistema.
 {
     "name": "Daniel",
     "email": "daniel@email.com",
+    "photo": "1N29374987e98n987b29d847d342b3i4uIUYBD3...",
     "password": "abcd1234",
     "nationality": "brasileiro",
     "phone": "83912341234",
@@ -155,6 +162,7 @@ _Example Response:_
     "_id": "123",
     "name": "Daniel",
     "email": "daniel@email.com",
+    "photoUrl": "https://ex.com/photo/123.png",
     "nationality": "brasileiro",
     "phone": "83912341234",
     "dateOfBirth": "1999-10-22"
@@ -168,7 +176,7 @@ _Example Response:_
 
 #### PATCH /users/:userId
 
-Atualiza os dados usuário especificado através do id.
+Atualiza os dados usuário com o id especificado.
 
 ##### Example Request
 
@@ -191,6 +199,7 @@ _Example Response:_
     "_id": "123",
     "name": "Matias",
     "email": "matias@email.com",
+    "photoUrl": "https://ex.com/photo/123.png",
     "nationality": "brasileiro",
     "phone": "83912341234",
     "dateOfBirth": "1999-10-22"
@@ -204,7 +213,7 @@ _Example Response:_
 
 #### DELETE /users/:userId
 
-Remove o usuário do sistema através do id.
+Remove o usuário com o id especificado.
 
 ##### Example Request
 
@@ -220,6 +229,7 @@ _Example Response:_
     "_id": "123",
     "name": "Daniel",
     "email": "daniel@email.com",
+    "photoUrl": "https://ex.com/photo/123.png",
     "nationality": "brasileiro",
     "phone": "83912341234",
     "dateOfBirth": "1999-10-22"
@@ -233,7 +243,7 @@ _Example Response:_
 
 ### Resource: Institution
 
-Recurso que suporta operações de manipulação e autenticação de instituições.
+Recurso que suporta operações de manipulação de instituições.
 
 -   [GET /institutions](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-institutions)
 -   [GET /institutions/:institutionId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-institutionsinstitutionid)
@@ -243,7 +253,7 @@ Recurso que suporta operações de manipulação e autenticação de instituiç�
 
 #### GET /institutions
 
-Retorna uma lista contendo todas as instituições cadastradas no sistema.
+Retorna uma lista contendo todas as instituições.
 
 ##### Example Request
 
@@ -261,6 +271,7 @@ _Example Response:_
         "name": "Instituição 1",
         "description": "breve descrição...",
         "email": "instituicao1@email.com",
+        "photoUrl": "https://ex.com/photo/123.png",
         "sif": "123124343",
         "phone": "83912341234",
         "address": "Rua Tavares Campos 34 - Centro - Porto",
@@ -275,6 +286,7 @@ _Example Response:_
         "name": "Instituição 2",
         "description": "breve descrição...",
         "email": "instituicao2@email.com",
+        "photoUrl": "https://ex.com/photo/456.png",
         "sif": "4534645656",
         "phone": "83943214321",
         "address": "Rua Tavares Campos 34 - Centro - Porto",
@@ -289,7 +301,7 @@ _Example Response:_
 
 #### GET /institutions/:institutionId
 
-Retorna a instituição espicificada através do id.
+Retorna a instituição com o id especificado.
 
 ##### Example Request
 
@@ -306,6 +318,7 @@ _Example Response:_
     "name": "Instituição 1",
     "description": "breve descrição...",
     "email": "instituicao1@email.com",
+    "photoUrl": "https://ex.com/photo/123.png",
     "sif": "123124343",
     "phone": "83912341234",
     "address": "Rua Tavares Campos 34 - Centro - Porto",
@@ -323,7 +336,7 @@ _Example Response:_
 
 #### POST /institutions
 
-Cria uma nova instituição no sistema.
+Cria uma nova instituição.
 
 ##### Example Request
 
@@ -334,6 +347,7 @@ Cria uma nova instituição no sistema.
     "name": "Instituição 1",
     "description": "breve descrição...",
     "email": "instituicao1@email.com",
+    "photo": "JHF23U4F82UY987612b78364978V6783...",
     "password": "abcd1234",
     "sif": "123456789",
     "phone": "83912341234",
@@ -357,6 +371,7 @@ _Example Response:_
     "name": "Instituição 1",
     "description": "breve descrição...",
     "email": "instituicao1@email.com",
+    "photoUrl": "https://ex.com/photo/123.png",
     "sif": "123456789",
     "phone": "83912341234",
     "address": "Rua Tavares Campos 34 - Centro - Porto",
@@ -375,7 +390,7 @@ _Example Response:_
 
 #### PATCH /institutions/:institutionId
 
-Atualiza os dados da instituição especificada através do id.
+Atualiza os dados da instituição com o id especificado.
 
 ##### Example Request
 
@@ -399,6 +414,7 @@ _Example Response:_
     "name": "Instituição 3",
     "description": "breve descrição...",
     "email": "instituicao3@email.com",
+    "photoUrl": "https://ex.com/photo/123.png",
     "sif": "123456789",
     "phone": "83912341234",
     "address": "Rua Tavares Campos 34 - Centro - Porto",
@@ -417,7 +433,7 @@ _Example Response:_
 
 #### DELETE /institutions/:institutionId
 
-Remove a instituição do sistema através do id.
+Remove a instituição com o id especificado.
 
 ##### Example Request
 
@@ -452,7 +468,7 @@ _Example Response:_
 
 ### Resource: Event
 
-Recurso que suporta operações de manipulação e autenticação de eventos.
+Recurso que suporta operações de manipulação de eventos.
 
 -   [GET /events](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-events)
 -   [GET /events/:eventId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-eventseventid)
@@ -462,7 +478,7 @@ Recurso que suporta operações de manipulação e autenticação de eventos.
 
 #### GET /events
 
-Retorna uma lista contendo todos eventos cadastrados no sistema.
+Retorna uma lista contendo todos eventos.
 
 ##### Example Request
 
@@ -516,17 +532,17 @@ _Example Response:_
 
 ```json
 {
-	"_id": "123",
-	"title": "Meu evento",
-	"description": "Descrição do meu evento",
-	"photoUrl": "https://ex.com/photos/435...",
-	"startDate": "2019-04-29T10:10",
-	"endDate": "2019-04-30T12:30",
-	"subscribers": [
-		{ "name": "Daniel", "photoUrl": "https://ex.com/photos/123..." },
-		{ "name": "Douglas", "photoUrl": "https://ex.com/photos/565..." }
-	],
-	"maxNumberOfSubscribers": 22
+    "_id": "123",
+    "title": "Meu evento",
+    "description": "Descrição do meu evento",
+    "photoUrl": "https://ex.com/photos/435...",
+    "startDate": "2019-04-29T10:10",
+    "endDate": "2019-04-30T12:30",
+    "subscribers": [
+        { "name": "Daniel", "photoUrl": "https://ex.com/photos/123..." },
+        { "name": "Douglas", "photoUrl": "https://ex.com/photos/565..." }
+    ],
+    "maxNumberOfSubscribers": 22
 }
 ```
 
@@ -561,13 +577,13 @@ _Example Response:_
 ```json
 {
     "_id": "123",
-	"title": "Meu evento",
-	"description": "Descrição do meu evento",
-	"photoUrl": "https://ex.com/photos/435...",
-	"startDate": "2019-04-29T10:10",
-	"endDate": "2019-04-30T12:30",
-	"subscribers": [],
-	"maxNumberOfSubscribers": 22
+    "title": "Meu evento",
+    "description": "Descrição do meu evento",
+    "photoUrl": "https://ex.com/photos/435...",
+    "startDate": "2019-04-29T10:10",
+    "endDate": "2019-04-30T12:30",
+    "subscribers": [],
+    "maxNumberOfSubscribers": 22
 }
 ```
 
@@ -598,14 +614,14 @@ _Example Response:_
 
 ```json
 {
-	"_id": "123",
-	"title": "Meu evento",
-	"description": "Descrição do meu evento corrigida",
-	"photoUrl": "https://ex.com/photos/435...",
-	"startDate": "2019-04-29T10:10",
-	"endDate": "2019-05-01T12:30",
-	"subscribers": [],
-	"maxNumberOfSubscribers": 22
+    "_id": "123",
+    "title": "Meu evento",
+    "description": "Descrição do meu evento corrigida",
+    "photoUrl": "https://ex.com/photos/435...",
+    "startDate": "2019-04-29T10:10",
+    "endDate": "2019-05-01T12:30",
+    "subscribers": [],
+    "maxNumberOfSubscribers": 22
 }
 ```
 
@@ -629,14 +645,14 @@ _Example Response:_
 
 ```json
 {
-	"_id": "123",
-	"title": "Meu evento",
-	"description": "Descrição do meu evento corrigida",
-	"photoUrl": "https://ex.com/photos/435...",
-	"startDate": "2019-04-29T10:10",
-	"endDate": "2019-05-01T12:30",
-	"subscribers": [],
-	"maxNumberOfSubscribers": 22
+    "_id": "123",
+    "title": "Meu evento",
+    "description": "Descrição do meu evento corrigida",
+    "photoUrl": "https://ex.com/photos/435...",
+    "startDate": "2019-04-29T10:10",
+    "endDate": "2019-05-01T12:30",
+    "subscribers": [],
+    "maxNumberOfSubscribers": 22
 }
 ```
 
