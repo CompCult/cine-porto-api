@@ -241,6 +241,84 @@ _Example Response:_
 -   403 - O cliente não possui permissão;
 -   404 - Usuário não existe.
 
+#### GET /users/:userId/events
+
+Retorna uma lista contendo todos os eventos do usuário especificado.
+
+##### Example Request
+
+`GET /users/456/events`
+
+##### Success Response
+
+_Status Code:_ 200  
+_Example Response:_
+
+```json
+[
+    {
+        "_id": "123",
+        "title": "Meu evento",
+        "description": "Descrição do meu evento",
+        "photoUrl": "https://ex.com/photos/435...",
+        "startDate": "2019-04-29T10:10",
+        "endDate": "2019-04-30T12:30",
+        "subscribers": [
+            { "name": "Daniel", "photoUrl": "https://ex.com/photos/123..." },
+            { "name": "Douglas", "photoUrl": "https://ex.com/photos/565..." }
+        ],
+        "maxNumberOfSubscribers": 22
+    },
+    {
+        "_id": "456",
+        "title": "Meu evento 2",
+        "description": "Descrição do meu evento 2",
+        "photoUrl": "https://ex.com/photos/487...",
+        "startDate": "2019-04-15T10:10",
+        "endDate": "",
+        "subscribers": [],
+        "maxNumberOfSubscribers": 10
+    }
+]
+```
+
+##### Client Errors
+
+-   404 - Usuário não existe.
+
+#### GET /users/:userId/events/:eventId
+
+Retorna o evento do usuário especificado.
+
+##### Example Request
+
+`GET /users/456/events/123`
+
+##### Success Response
+
+_Status Code:_ 200  
+_Example Response:_
+
+```json
+{
+    "_id": "123",
+    "title": "Meu evento",
+    "description": "Descrição do meu evento",
+    "photoUrl": "https://ex.com/photos/435...",
+    "startDate": "2019-04-29T10:10",
+    "endDate": "2019-04-30T12:30",
+    "subscribers": [
+        { "name": "Daniel", "photoUrl": "https://ex.com/photos/123..." },
+        { "name": "Douglas", "photoUrl": "https://ex.com/photos/565..." }
+    ],
+    "maxNumberOfSubscribers": 22
+}
+```
+
+##### Client Errors
+
+-   404 - Usuário ou evento não existem.
+
 ### Resource: Institution
 
 Recurso que suporta operações de manipulação de instituições.
@@ -667,7 +745,7 @@ Retorna uma lista contendo todos os inscritos do evento especificado.
 
 ##### Example Request
 
-`GET /events/:eventId/subscribers`
+`GET /events/123/subscribers`
 
 ##### Success Response
 
@@ -699,7 +777,7 @@ Retorna o inscrito do evento especificado.
 
 ##### Example Request
 
-`GET /events/:eventId/subscribers/:subscriberId`
+`GET /events/123/subscribers/678`
 
 ##### Success Response
 
@@ -724,7 +802,7 @@ Aloca um novo inscrito do evento especificado.
 
 ##### Example Request
 
-`POST /events/:eventId/subscribers/`
+`POST /events/123/subscribers/`
 
 ```json
 {
@@ -745,7 +823,6 @@ _Example Response:_
 }
 ```
 
-
 ##### Client Errors
 
 -   403 - O cliente não possui permissão;
@@ -758,7 +835,7 @@ Desaloca o inscrito do evento especificado.
 
 ##### Example Request
 
-`DELETE /events/:eventId/subscribers/:subscriberId`
+`DELETE /events/123/subscribers/678`
 
 ##### Success Response
 
