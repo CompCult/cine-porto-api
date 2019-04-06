@@ -17,6 +17,12 @@ Documentação da API da aplicação Cine Porto.
     -   [POST /institutions](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-institutions)
     -   [PATCH /institutions/:institutionId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#patch-institutionsinstitutionid)
     -   [DELETE /institutions/:institutionId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#delete-institutionsinstitutionid)
+-   [Event](https://github.com/CompCult/cine-porto-api/blob/master/api.md#resource-event)
+    -   [GET /events](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-events)
+    -   [GET /events/:eventId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-eventseventid)
+    -   [POST /events](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-events)
+    -   [PATCH /events/:eventId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#patch-eventseventid)
+    -   [DELETE /events/:eventsId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#delete-eventseventid)
 
 ### Authentication
 
