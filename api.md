@@ -11,6 +11,8 @@ Documentação da API da aplicação Cine Porto.
     -   [POST /users](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-users)
     -   [PATCH /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#patch-usersuserid)
     -   [DELETE /users/:userId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#delete-usersuserid)
+    -   [GET /users/:userId/events](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-usersuseridevents)
+    -   [GET /users/:userId/events/:eventId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-usersuserideventseventid)
 -   [Institution](https://github.com/CompCult/cine-porto-api/blob/master/api.md#resource-institution)
     -   [GET /institutions](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-institutions)
     -   [GET /institutions/:institutionId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-institutionsinstitutionid)
@@ -23,6 +25,10 @@ Documentação da API da aplicação Cine Porto.
     -   [POST /events](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-events)
     -   [PATCH /events/:eventId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#patch-eventseventid)
     -   [DELETE /events/:eventsId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#delete-eventseventid)
+    -   [GET /events/:eventId/subscribers](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-eventseventidsubscribers)
+    -   [GET /events/:eventId/subscribers/:subscriberId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-eventseventidsubscriberssubscriberid)
+    -   [POST /events/:eventId/subscribers](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-eventseventidsubscribers)
+    -   [DELETE /events/:eventId/subscribers/:subscriberId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#delete-eventseventidsubscriberssubscriberid)
 
 ### Authentication
 
@@ -553,6 +559,10 @@ Recurso que suporta operações de manipulação de eventos.
 -   [POST /events](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-events)
 -   [PATCH /events/:eventId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#patch-eventseventid)
 -   [DELETE /events/:eventsId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#delete-eventseventid)
+-   [GET /events/:eventId/subscribers](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-eventseventidsubscribers)
+-   [GET /events/:eventId/subscribers/:subscriberId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#get-eventseventidsubscriberssubscriberid)
+-   [POST /events/:eventId/subscribers](https://github.com/CompCult/cine-porto-api/blob/master/api.md#post-eventseventidsubscribers)
+-   [DELETE /events/:eventId/subscribers/:subscriberId](https://github.com/CompCult/cine-porto-api/blob/master/api.md#delete-eventseventidsubscriberssubscriberid)
 
 #### GET /events
 
