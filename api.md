@@ -660,3 +660,121 @@ _Example Response:_
 
 -   403 - O cliente não possui permissão;
 -   404 - Instituição não existe.
+
+#### GET /events/:eventId/subscribers
+
+Retorna uma lista contendo todos os inscritos do evento especificado.
+
+##### Example Request
+
+`GET /events/:eventId/subscribers`
+
+##### Success Response
+
+_Status Code:_ 200  
+_Example Response:_
+
+```json
+[
+    {
+        "_id": "678",
+        "name": "Daniel",
+        "photoUrl": "https://ex.com/photos/123..."
+    },
+    {
+        "_id": "789",
+        "name": "Douglas",
+        "photoUrl": "https://ex.com/photos/565..."
+    }
+]
+```
+
+##### Client Errors
+
+-   404 - Evento não existe.
+
+#### GET /events/:eventId/subscribers/:subscriberId
+
+Retorna o inscrito do evento especificado.
+
+##### Example Request
+
+`GET /events/:eventId/subscribers/:subscriberId`
+
+##### Success Response
+
+_Status Code:_ 200  
+_Example Response:_
+
+```json
+{
+    "_id": "678",
+    "name": "Daniel",
+    "photoUrl": "https://ex.com/photos/123..."
+}
+```
+
+##### Client Errors
+
+-   404 - Evento ou inscrito não existem.
+
+#### POST /events/:eventId/subscribers
+
+Aloca um novo inscrito do evento especificado.
+
+##### Example Request
+
+`POST /events/:eventId/subscribers/`
+
+```json
+{
+    "subscriber": "123"
+}
+```
+
+##### Success Response
+
+_Status Code:_ 201  
+_Example Response:_
+
+```json
+{
+    "_id": "123",
+    "name": "Marcos",
+    "photoUrl": "https://ex.com/photos/123..."
+}
+```
+
+
+##### Client Errors
+
+-   403 - O cliente não possui permissão;
+-   404 - Evento ou inscrito não existem;
+-   409 - Inscrito já alocado.
+
+#### DELETE /events/:eventId/subscribers/:subscriberId
+
+Desaloca o inscrito do evento especificado.
+
+##### Example Request
+
+`DELETE /events/:eventId/subscribers/:subscriberId`
+
+##### Success Response
+
+_Status Code:_ 200  
+_Example Response:_
+
+```json
+{
+    "_id": "678",
+    "name": "Daniel",
+    "photoUrl": "https://ex.com/photos/123..."
+}
+```
+
+##### Client Errors
+
+-   400 - O usuário não está alocado no evento;
+-   403 - O cliente não possui permissão;
+-   404 - Evento ou inscrito não existem.
